@@ -1,6 +1,5 @@
 def english_number(number)
-  puts number
-  puts 'WHY!' if number.nil?
+  
   num_string = ''
 
   ones_place = %w[one two three four five six seven eight nine]
@@ -61,9 +60,11 @@ def english_number(number)
 
   write = left
   left = 0
-
-  num_string += ones_place[write - 1] if write > 0
-  puts num_string
+  
+  if write > 0
+    num_string += ones_place[write - 1]
+  end
+  num_string
 end
 
 def what_number
@@ -73,10 +74,12 @@ def what_number
   if reply == 0
     return puts 'zero'
   elsif reply > 0
-    english_number(reply)
+    print '> '
+    puts english_number(reply)
   else
     what_number
   end
 end
 
 what_number
+
