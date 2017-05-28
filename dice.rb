@@ -16,10 +16,10 @@ class Die
 
   def cheat(side)
     return puts 'Try not to be obvious!' if side > 6
-    @numberShowing = side
+      @numberShowing = side
   end
 end
 
-die = Die.new.showing
-Die.cheat(7)
+die = Die.new
+die.cheat(6)
 puts die.showing
