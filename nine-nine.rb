@@ -1,5 +1,9 @@
 def english_number(number)
   
+  if number == 0
+   return num_string = "No more"
+  end
+  
   num_string = ''
 
   ones_place = %w[one two three four five six seven eight nine]
@@ -81,12 +85,10 @@ end
 
 
 def what_number
-  puts 'What number?'
+  puts 'How many bottles of beer are on the wall?'
   puts '> '
   reply = $stdin.gets.chomp.to_i
-  if reply == 0
-    return puts 'zero'
-  elsif reply > 0
+  if reply >= 0
     print '> '
     puts bottles(reply)
   else
